@@ -67,8 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HPS_C1.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="HPS_C1_FB.cs" />
+    <Compile Include="HPS_APP_G.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

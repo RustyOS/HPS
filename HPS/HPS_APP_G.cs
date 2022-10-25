@@ -1,48 +1,52 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 namespace HPS
 {
-    class HPS_C1
+    class HPSG
     {
         static void Main(string[] args)
         {
+            if (args is null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+
+            // Zapis u konzolu početak testiranja
             Console.Write("test case started ");
-            //create the reference for the browser  
-           
+
+            //Postavke za Chrome Driver
             IWebDriver driver = new ChromeDriver();
            
-            // navigate to URL  
+            // Navigiranje na Google Stranicu  
             driver.Navigate().GoToUrl("https://www.google.com/");
+            
+            //Pauza
             Thread.Sleep(2000);
 
-            //identify the google search button  
+            //Potvrda korištenja google usluge
             IWebElement ele1 = driver.FindElement(By.Id("L2AGLb"));
-
-            // click on the Google search button  
             ele1.Click();
+
+            // Pauza
             Thread.Sleep(3000);
 
-            // identify the Google search text box  
+            //Navigacija u formu
             IWebElement ele = driver.FindElement(By.Name("q"));
-         
-            //enter the value in the google search text box  
+
+            //Unos u formu Google Tražilice  
             ele.SendKeys("javatpoint tutorials");
             Thread.Sleep(2000);
           
-            //identify the google search button  
+            //Potvrda unosa
             IWebElement ele2 = driver.FindElement(By.Name("btnK"));
-           
-            // click on the Google search button  
             ele2.Click();
+
+            //Pauza
             Thread.Sleep(3000);
             
-            //close the browser  
+            //Izlaz
             driver.Close();
             Console.Write("test case ended ");
         }
